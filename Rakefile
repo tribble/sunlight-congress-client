@@ -4,22 +4,22 @@ Bundler::GemHelper.install_tasks
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
 
-task :test => :spec
+task test: :spec
 
 begin
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new
 rescue LoadError
   task :rubocop do
-    $stderr.puts 'Rubocop is disabled'
+    $stderr.puts 'RuboCop is disabled'
   end
 end
 
 require 'yard'
 namespace :doc do
   YARD::Rake::YardocTask.new do |task|
-    task.files   = %w[lib/**/*.rb]
-    task.options = %w[--markup markdown]
+    task.files   = %w(lib/**/*.rb)
+    task.options = %w(--markup markdown)
   end
 end
 
@@ -30,7 +30,8 @@ end
 
 require 'yardstick/rake/verify'
 Yardstick::Rake::Verify.new do |verify|
-  verify.threshold = 60.0
+  verify.require_exact_threshold = false
+  verify.threshold = 60
 end
 
-task :default => [:spec, :rubocop, :verify_measurements]
+task default: [:spec, :rubocop, :verify_measurements]
