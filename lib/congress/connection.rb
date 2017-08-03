@@ -2,7 +2,7 @@ require 'faraday_middleware'
 
 module Congress
   module Connection
-    ENDPOINT = 'https://congress.api.sunlightfoundation.com'.freeze
+    ENDPOINT = 'https://sunlight.countable.us'.freeze
 
   private
 
