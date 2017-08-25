@@ -1,7 +1,7 @@
 require 'simplecov'
 require 'coveralls'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
+SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
 
 SimpleCov.start do
   add_filter '/spec/'
@@ -18,7 +18,7 @@ RSpec.configure do |config|
   end
 end
 
-WebMock.disable_net_connect!(:allow => 'coveralls.io')
+WebMock.disable_net_connect!(allow: 'coveralls.io')
 
 def a_get(path)
   a_request(:get, Congress::Client::ENDPOINT + path)
