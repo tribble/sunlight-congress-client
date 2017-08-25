@@ -7,7 +7,7 @@ module Congress
   # Alias for Congress::Client.new
   #
   # @return [Congress::Client]
-  def new(key = key)
+  def new(key = self.key)
     yield self if block_given?
     return @client if instance_variable_defined?(:@client) && @client.key == key
     @client = Congress::Client.new(key)
