@@ -2,8 +2,8 @@
 require File.expand_path('../lib/congress/version', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.add_dependency 'faraday', '~> 0.9.0'
-  spec.add_dependency 'faraday_middleware', '~> 0.9.1'
+  spec.add_dependency 'faraday', '~> 0.12.2'
+  spec.add_dependency 'faraday_middleware', '~> 0.10.1'
   spec.add_dependency 'hashie', '~> 2.0'
   spec.add_dependency 'rash', '~> 0.4'
   spec.add_dependency 'geocoder', '~> 1.2'

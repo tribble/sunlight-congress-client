@@ -9,3 +9,6 @@ doc/*
 log/*
 measurement/*
 pkg/*
+
+.env
+.idea/*
