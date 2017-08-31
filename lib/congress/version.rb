@@ -1,3 +1,3 @@
 module Congress
-  VERSION = '0.2.3'
+  VERSION = '0.2.9'
 end

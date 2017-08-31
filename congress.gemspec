@@ -2,22 +2,21 @@
 require File.expand_path('../lib/congress/version', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.add_dependency 'faraday', '~> 0.9.0'
-  spec.add_dependency 'faraday_middleware', '~> 0.9.1'
+  spec.add_dependency 'faraday', '~> 0.12.2'
+  spec.add_dependency 'faraday_middleware', '~> 0.10.1'
   spec.add_dependency 'hashie', '~> 2.0'
-  spec.add_dependency 'json', '~> 1.8'
   spec.add_dependency 'rash', '~> 0.4'
-  spec.add_dependency 'geocoder', '~> 1.2.0'
+  spec.add_dependency 'geocoder', '~> 1.2'
   spec.add_development_dependency 'bundler', '~> 1.0'
   spec.author        = 'Erik Michaels-Ober'
-  spec.description   = %q(Ruby wrapper for the Sunlight Congress API, a live JSON API for the people and work of Congress, provided by the Sunlight Foundation.)
+  spec.description   = 'Ruby wrapper for the Sunlight Congress API, a live JSON API for the people and work of Congress, provided by the Sunlight Foundation.'
   spec.email         = 'sferik@gmail.com'
-  spec.files         = `git ls-files`.split("\n")
+  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.start_with?('spec/') }
   spec.homepage      = 'https://github.com/codeforamerica/congress'
   spec.licenses      = ['MIT']
   spec.name          = 'congress'
   spec.require_paths = ['lib']
-  spec.summary       = %q(Ruby wrapper for the Sunlight Congress API)
-  spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  spec.required_ruby_version = '>= 1.9.3'
+  spec.summary       = 'Ruby wrapper for the Sunlight Congress API'
   spec.version       = Congress::VERSION
 end
